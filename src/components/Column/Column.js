@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import CardForm from "../CardForm/CardForm";
 import { useSelector } from "react-redux";
 
-function Column({ id, title, icon, addCard }) {
+function Column({ id, title, icon }) {
   const cards = useSelector((state) =>
     state.cards.filter((card) => card.columnId === id)
   );
@@ -19,7 +19,7 @@ function Column({ id, title, icon, addCard }) {
           <Card key={card.id}>{card.title}</Card>
         ))}
       </ul>
-      <CardForm action={addCard} />
+      <CardForm columnId={id} />
     </article>
   );
 }
