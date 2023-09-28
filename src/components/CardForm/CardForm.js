@@ -3,19 +3,20 @@ import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
 import shortid from "shortid";
 import { useDispatch } from "react-redux";
+import { addCard } from "../../redux/store";
 
 function CardForm({ columnId }) {
   const [title, setTitle] = useState("");
   const dispatch = useDispatch();
 
-  const addCard = (e) => {
+  const handleAddCard = (e) => {
     e.preventDefault();
-    dispatch({ type: "ADD_CARD", payload: { id: shortid(), title, columnId } });
+    dispatch(addCard({ id: shortid(), title, columnId }));
     setTitle("");
   };
 
   return (
-    <form onSubmit={addCard}>
+    <form onSubmit={handleAddCard}>
       <TextInput
         onChange={(e) => setTitle(e.target.value)}
         value={title}

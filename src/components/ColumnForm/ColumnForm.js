@@ -4,6 +4,7 @@ import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
 import shortid from "shortid";
 import { useDispatch } from "react-redux";
+import { addColumn } from "../../redux/store";
 
 function ColumnForm() {
   const [title, setTitle] = useState("");
@@ -11,18 +12,15 @@ function ColumnForm() {
 
   const dispatch = useDispatch();
 
-  const addColumn = (e) => {
+  const handleAddColumn = (e) => {
     e.preventDefault();
-    dispatch({
-      type: "ADD_COLUMN",
-      payload: { id: shortid(), title, icon, cards: [] },
-    });
+    dispatch(addColumn({ id: shortid(), title, icon, cards: [] }));
     setTitle("");
     setIcon("");
   };
 
   return (
-    <form onSubmit={addColumn} className={styles.columnForm}>
+    <form onSubmit={handleAddColumn} className={styles.columnForm}>
       <TextInput
         onChange={(e) => setTitle(e.target.value)}
         value={title}
