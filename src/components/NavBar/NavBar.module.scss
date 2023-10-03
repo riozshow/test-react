@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  display: flex;
+  gap: 2rem;
+}
+
+i {
+  font-size: x-large;
+}
