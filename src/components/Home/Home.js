@@ -1,13 +1,16 @@
 import Hero from "../Hero/Hero";
-import SearchForm from "../SearchForm/SearchForm";
 import List from "../List/List";
+import Lists from "../Lists/Lists";
+import { Route, Routes } from "react-router-dom";
 
 function Home() {
   return (
     <>
       <Hero />
-      <SearchForm />
-      <List />
+      <Routes>
+        <Route path="/" element={<Lists />}></Route>
+        <Route path="/lists/:listId" element={<List />}></Route>
+      </Routes>
     </>
   );
 }

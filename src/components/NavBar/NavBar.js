@@ -1,14 +1,21 @@
-import "./NavBar.module.scss";
-import NavLink from "../NavLink/NavLink";
+import styles from "./NavBar.module.scss";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
+  const isActive = ({ isActive }) => (isActive ? styles.isActive : null);
   return (
     <nav>
-      <i class={`fas fa-tasks`}></i>
+      <i className={`fas fa-tasks`}></i>
       <ul>
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/favorite">Favorite</NavLink>
-        <NavLink href="/about">About</NavLink>
+        <NavLink className={isActive} to="/">
+          Home
+        </NavLink>
+        <NavLink className={isActive} to="/favorite">
+          Favorite
+        </NavLink>
+        <NavLink className={isActive} to="/about">
+          About
+        </NavLink>
       </ul>
     </nav>
   );
