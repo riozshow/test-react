@@ -5,7 +5,7 @@ function NavBar() {
   const isActive = ({ isActive }) => (isActive ? styles.isActive : null);
   return (
     <nav>
-      <i className={`fas fa-tasks`}></i>
+      <i className={`${styles.navIcon} fas fa-tasks`}></i>
       <ul>
         <NavLink className={isActive} to="/">
           Home

@@ -1,10 +1,11 @@
+import FavoriteList from "../FavoriteList/FavoriteList";
 import PageTitle from "../PageTitle/PageTitle";
 
 function Favorite() {
   return (
     <>
       <PageTitle>Favorite</PageTitle>
-      <p>Lorem ipsum</p>
+      <FavoriteList />
     </>
   );
 }

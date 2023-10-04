@@ -11,17 +11,13 @@ function CardForm({ columnId }) {
 
   const handleAddCard = (e) => {
     e.preventDefault();
-    dispatch(addCard({ id: shortid(), title, columnId }));
+    dispatch(addCard({ id: shortid(), title, columnId, isFavorite: false }));
     setTitle("");
   };
 
   return (
     <form onSubmit={handleAddCard}>
-      <TextInput
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        placeholder="Title..."
-      />
+      <TextInput onChange={(e) => setTitle(e.target.value)} value={title} placeholder="Title..." />
       <Button>Add card</Button>
     </form>
   );
