@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { toggleFavorite } from "../../redux/store";
+import { toggleFavorite } from "../../redux/cardsRedux";
 import styles from "./FavoriteButton.module.scss";
 
 function FavoriteButton({ isFavorite, id }) {

@@ -1,0 +1,12 @@
+@import "../../styles/settings.scss";
+
+.deleteButton {
+  color: $color-warning;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}

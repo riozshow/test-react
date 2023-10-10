@@ -2,8 +2,8 @@ import styles from "./Column.module.scss";
 import Card from "../Card/Card";
 import CardForm from "../CardForm/CardForm";
 import { useSelector } from "react-redux";
-import { getFilteredCards } from "../../redux/store";
-import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import { getFilteredCards } from "../../redux/cardsRedux";
+import CardActions from "../CardActions/CardActions";
 
 function Column({ id, title, icon }) {
   const cards = useSelector((state) => getFilteredCards(state, id));
@@ -18,7 +18,7 @@ function Column({ id, title, icon }) {
         {cards.map((card) => (
           <Card key={card.id}>
             {card.title}
-            <FavoriteButton isFavorite={card.isFavorite} id={card.id} />
+            <CardActions card={card} />
           </Card>
         ))}
       </ul>

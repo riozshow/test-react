@@ -3,7 +3,7 @@ import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
 import shortid from "shortid";
 import { useDispatch } from "react-redux";
-import { addCard } from "../../redux/store";
+import { addCard } from "../../redux/cardsRedux";
 
 function CardForm({ columnId }) {
   const [title, setTitle] = useState("");
